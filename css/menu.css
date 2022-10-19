@@ -1,3 +1,16 @@
+:root{
+    --sapphire-blue: #186896ff;
+    --rich-black-fogra-39: #040404ff;
+    --timberwolf: #d7d9ceff;
+    --international-orange-golden-gate-bridge: #bb4430ff;
+}
+
+body{
+    font-family: 'Josefin Slab', serif;
+    font-weight: 600;
+    font-size: 18px;
+}
+
 .wrapper-component-content{
     display: flex;
     flex-wrap: wrap;
@@ -5,8 +18,8 @@
     padding: 30px;
     width: 90%;
     min-height: 800px;
-    margin: 30px 20px;
-    background-color: #FEFEFE;
+    margin: 30px auto;
+    background-color: var(--timberwolf);
     box-shadow: 3px 3px 14px rgba(0, 0, 0, 0.3);
     border-radius: 14px;
 }
@@ -14,11 +27,15 @@
 .content{
     width: 300px;
     margin: 40px 20px;
-    background-color: #FEFEFE;
     box-shadow: 3px 3px 14px rgba(0, 0, 0, 0.3);
     border-radius: 14px;
-    background-color: #cece;
+    color: white;
+    background-color: var(--international-orange-golden-gate-bridge);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+}
+
+.content .description > *{
+    margin-bottom: 5px;
 }
