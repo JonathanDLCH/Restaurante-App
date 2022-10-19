@@ -1,0 +1,24 @@
+.wrapper-component-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 30px;
+    width: 90%;
+    min-height: 800px;
+    margin: 30px 20px;
+    background-color: #FEFEFE;
+    box-shadow: 3px 3px 14px rgba(0, 0, 0, 0.3);
+    border-radius: 14px;
+}
+
+.content{
+    width: 300px;
+    margin: 40px 20px;
+    background-color: #FEFEFE;
+    box-shadow: 3px 3px 14px rgba(0, 0, 0, 0.3);
+    border-radius: 14px;
+    background-color: #cece;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Examen</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/menu.css" />
+  </head>
+  <body>
+    <header class="container-fluid px-5">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"
+          ><img src="img/RLogo.png" alt="" width="80"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="#"
+                >Menu <span class="sr-only">(ordena)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Administración</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="container">
+      <h2 class="text-center">Menu</h2>
+      <section class="wrapper-component-content" id="platillos">
+        <template id="template-card">
+            <div class="content">
+              <div>
+                <h3 id="titleCard">Titulo</h3>
+              </div>
+    
+              <figure class="content-img">
+                <img
+                  class="img"
+                  src="img/Ancas-de-rana.jpg"
+                  alt=""
+                  id="url"
+                  width="100%"
+                />
+              </figure>
+    
+              <div>
+                <p id="paragraphCard">Descripcion</p>
+                <button class="btn btn-primary">Agregar</button>
+              </div>
+            </div>
+        </template>
+      </section>
+    </main>
+    <footer class="container-fluid bg-dark text-white text-center p-3">
+      <h4>Facultad de Ciencias de la Computacion || BUAP</h4>
+      <p>De La Cruz Huerta Jonathan __ jonathan.delacruzh@alumno.buap.mx</p>
+      <p>Josue Sanchez Hernandez __ josue.sanchezh@alumno.buap.mx</p>
+      <small>Derechos Reservados&copy</small>
+    </footer>
+    <script src="js/app.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
