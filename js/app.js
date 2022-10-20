@@ -169,7 +169,7 @@ const setCarrito = (item) => {
   //console.log(item);
   const producto = {
     title: item.querySelector("h3").textContent,
-    precio: item.querySelector("small").textContent,
+    precio:parseInt(item.querySelector("small").textContent.substring(1,item.querySelector("small").textContent.length)),
     id: item.querySelector("button").dataset.id,
     cantidad: 1,
   };
@@ -187,12 +187,12 @@ const pintarCarrito = () => {
   items.innerHTML = "";
 
   Object.values(ordenes).forEach((producto) => {
-    console.log(parseInt(producto.precio) , parseInt(producto.cantidad));
+    console.log(typeof(producto.precio) , parseInt(producto.cantidad));
     templateCarrito.querySelector("th").textContent = producto.id;
     templateCarrito.querySelectorAll("td")[0].textContent = producto.title;
     templateCarrito.querySelectorAll("td")[1].textContent = producto.cantidad;
     templateCarrito.querySelector("span").textContent =
-      parseInt(producto.precio) * parseInt(producto.cantidad);
+      producto.precio * producto.cantidad;
 
     //botones
     templateCarrito.querySelector(".btn-info").dataset.id = producto.id;

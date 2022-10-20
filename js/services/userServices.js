@@ -22,6 +22,7 @@ function login() {
   const response = loginService(input_email.value, "123");
 
   alert(response);
-  sessionStorage.setItem("session", response)
 
+  sessionStorage.setItem("session", response)
+  window.location.replace('./index.html')
 }
