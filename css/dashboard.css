@@ -1,0 +1,11 @@
+:root{
+    --sapphire-blue: #186896ff;
+    --rich-black-fogra-39: #040404ff;
+    --timberwolf: #d7d9ceff;
+    --international-orange-golden-gate-bridge: #bb4430ff;
+}
+
+table{
+    color: white;
+    background: var(--sapphire-blue);
+}

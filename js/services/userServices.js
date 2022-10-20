@@ -23,6 +23,6 @@ function login() {
 
   alert(response);
 
-  sessionStorage.setItem("session", response)
-  window.location.replace('./index.html')
+  sessionStorage.setItem("session", response);
+  window.location.href = "./index.html";
 }

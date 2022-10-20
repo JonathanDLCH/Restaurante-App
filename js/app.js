@@ -11,7 +11,7 @@ class Platillo {
 }
 
 const Menu = {
-  platillos: [],
+  platillos: []
 };
 
 const Orden = {
@@ -137,7 +137,7 @@ items.addEventListener("click", (e) => {
   btnAumentarDisminuir(e);
 });
 
-// Pintar productos
+// Pintar platillos
 const pintarCards = (data) => {
   data.forEach((item) => {
     templateCard.querySelector("h3").textContent = item.nombre;
@@ -263,3 +263,6 @@ const btnAumentarDisminuir = (e) => {
   }
   e.stopPropagation();
 };
+
+//---------Guardando datos en localStorage---------
+localStorage.setItem("data", JSON.stringify(Menu));
