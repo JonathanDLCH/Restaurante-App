@@ -22,5 +22,6 @@ function login() {
   const response = loginService(input_email.value, "123");
 
   alert(response);
-  window.location.href = "http://www.w3schools.com";
+  sessionStorage.setItem("session", response)
+
 }
