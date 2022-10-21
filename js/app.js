@@ -1,3 +1,4 @@
+const total_orden = document.getElementById("total_sale");
 //----------Declaración de clases y menu----------//
 class Platillo {
   constructor(id, nombre, precio, descripcion, categoria, img) {
@@ -9,17 +10,22 @@ class Platillo {
     this.img = img;
   }
 }
+const ventas = {
+  ordenesDeVenta: [],
+};
 
 const Menu = {
-  platillos: []
+  platillos: [],
 };
 
-const Orden = {
-  id: 1,
-  cliente: "",
-  platillos: [],
-  cuenta: 0,
-};
+class Orden {
+  constructor(id, cliente, platillos, cuenta) {
+    (this.id = id),
+      (this.cliente = cliente),
+      (this.platillos = platillos),
+      (this.cuenta = cuenta);
+  }
+}
 
 const platillo1 = new Platillo(
   1,
@@ -123,9 +129,7 @@ const templateFooter = document.getElementById("template-footer").content;
 const templateCarrito = document.getElementById("template-carrito").content;
 
 const fragment = document.createDocumentFragment();
-
 let ordenes = {};
-
 //-----------Eventos-----------
 document.addEventListener("DOMContentLoaded", (e) => {
   pintarCards(Menu.platillos);
@@ -169,7 +173,14 @@ const setCarrito = (item) => {
   //console.log(item);
   const producto = {
     title: item.querySelector("h3").textContent,
-    precio:parseInt(item.querySelector("small").textContent.substring(1,item.querySelector("small").textContent.length)),
+    precio: parseInt(
+      item
+        .querySelector("small")
+        .textContent.substring(
+          1,
+          item.querySelector("small").textContent.length
+        )
+    ),
     id: item.querySelector("button").dataset.id,
     cantidad: 1,
   };
@@ -187,7 +198,7 @@ const pintarCarrito = () => {
   items.innerHTML = "";
 
   Object.values(ordenes).forEach((producto) => {
-    console.log(typeof(producto.precio) , parseInt(producto.cantidad));
+    console.log(typeof producto.precio, parseInt(producto.cantidad));
     templateCarrito.querySelector("th").textContent = producto.id;
     templateCarrito.querySelectorAll("td")[0].textContent = producto.title;
     templateCarrito.querySelectorAll("td")[1].textContent = producto.cantidad;
@@ -240,6 +251,15 @@ const pintarFooter = () => {
     ordenes = {};
     pintarCarrito();
   });
+
+  const boton_pagar = document.querySelector("#pagar-orden");
+  boton_pagar.addEventListener("click", () => {
+    console.log(ordenes, "ordenes");
+    ventas.ordenesDeVenta.push(ordenes);
+    localStorage.setItem("ventas", JSON.stringify(ventas));
+    ordenes = {};
+    pintarCarrito();
+  });
 };
 
 const btnAumentarDisminuir = (e) => {
@@ -261,6 +281,7 @@ const btnAumentarDisminuir = (e) => {
     }
     pintarCarrito();
   }
+
   e.stopPropagation();
 };
 
