@@ -24,5 +24,5 @@ function login() {
   alert(response);
 
   sessionStorage.setItem("session", response);
-  window.location.href = "./index.html";
+  window.location.href = "./dashboard.html";
 }

@@ -8,7 +8,6 @@ let { platillos } = JSON.parse(localStorage.getItem("data"));
 //-----------Eventos-----------
 document.addEventListener("DOMContentLoaded", (e) => {
     pintarPlatillos(platillos);
-    addEventToButtons();
 });
 /*
 items.addEventListener("click", (e) => {
@@ -33,6 +32,9 @@ const pintarPlatillos = (data) => {
         fragment.appendChild(clone);
     });
     items.appendChild(fragment);
+    
+    addEventToButtons();
+
 };
 
 console.log(platillos);
@@ -70,7 +72,9 @@ function addEventToButtons() {
 function deleteItem(event) {
     console.log(event.target.parentNode);
     const buttonsParent = event.target.parentNode; // <li id='12312'></li>
+    console.log(buttonsParent)
     const id = buttonsParent.getAttribute('data-id');
+    console.log(id)
   
     const newArray = platillos.filter((item) => {  // [item, item, item ]
       return item.id != id;  // false
